@@ -1,4 +1,4 @@
-#include "c_event.h"
+#include "event.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -23,7 +23,7 @@ sys_event* createNewEvent(event_func fn, uint ac, ...) {
 	return out;
 }
 
-void _pushBackEvents(event_func ev, int argCnt, va_list vl) {
+/*void _pushBackEvents(event_func ev, int argCnt, va_list vl) {
 	va_start(vl, argCnt);
 	sys_event* newEvent = createNewEvent(ev, argCnt, vl);
 
@@ -35,7 +35,7 @@ void _pushBackEvents(event_func ev, int argCnt, va_list vl) {
 
 	
 	VA_CLEANUP;
-}
+}*/
 
 void* _callEvent(sys_event ev) {
 	return (ev.fn)(ev.argCnt, ev.vlArgs);
