@@ -40,17 +40,13 @@ typedef struct sys_event { // fucking c is weird with this
 sys_event* createNewEvent(event_func fn, uint ac, ...);
 
 void _pushBackEvents(event_func ev, int argCnt, va_list vl); // adds a new event to the bottom of the list
-//void _popFrontEvents(); // remove event at front
 void _clearEvent(uint pos); // sets the event at the position to NULL
 sys_event _atEvents(uint pos); // access events at position (with saftey precautions)
 void _CleanUpEvents(); // removed all null events
-
 void runEventHandler(); // the funtion for the event handler thread
 
 #ifdef __cplusplus
 }
 #endif // __cplusplus
-
-#define USE_CPLUSPLUS 0
 
 #endif
