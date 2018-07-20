@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-uint eventListLength = 1;
+uint eventListLength = 0;
 sys_event* events;
 
 //Debug thing
@@ -161,11 +161,11 @@ void runEventHandler() {
         
         assert(res != NULL && "realloc failure");
 
-		for (uint i = 1; i <= eventListLength; i++) {
+		for (uint i = 0; i <= eventListLength; i++) {
 			CREATE_THREAD(threads[i], runEvent, (THREAD_ARG_T)i);
 		}
 	
-		for (uint i = 1; i <= eventListLength; i++) {
+		for (uint i = 0; i <= eventListLength; i++) {
 			JOIN_THREAD(threads[i]);
 		}
 
