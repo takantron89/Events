@@ -6,7 +6,7 @@ A multi threaded event library written in C
 * Be inherently multi-threaded
 * To (eventually) have as small footprint as possible in terms of memory 
 
-## To do
+### To do
 * Add an event priority system
 * Mutex support
 * C++ bindings
